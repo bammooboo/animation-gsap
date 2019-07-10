@@ -1,0 +1,24 @@
+.preLoader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  background-color: $COLOR_PRIMARY;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__inner {
+    width: 150px;
+    height: 150px;
+  }
+
+  .petals {
+    opacity: 0;
+    transform-origin: center;
+  }
+
+  .hidden {
+    @include hidden;
+  }
+}
