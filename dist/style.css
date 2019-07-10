@@ -347,6 +347,66 @@ body,
 html {
   height: 100%; }
 
+body {
+  font-family: 'Montserrat', sans-serif; }
+
+.nav {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #1B1440; }
+  .nav__menu {
+    flex-flow: column wrap; }
+    .nav__menu li {
+      list-style: none; }
+  .nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    display: inline-block;
+    padding: 15px 30px;
+    transition: 0.2s ease all; }
+  .nav__honeycomb {
+    width: 40px;
+    height: 40px; }
+  .nav__close {
+    margin: 0;
+    position: absolute;
+    top: 24px;
+    right: 30px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px; }
+    .nav__close svg {
+      fill: #fff; }
+
+.header {
+  position: relative;
+  height: 70px; }
+  .header__logo {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 26px;
+    left: 28px; }
+  .header__menu-icon {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 10; }
+    .header__menu-icon .burger-line {
+      width: 24px;
+      height: 2px;
+      background-color: #1B1440;
+      margin-bottom: 6px; }
+
 .preLoader {
   width: 100vw;
   height: 100vh;
@@ -363,13 +423,8 @@ html {
     opacity: 0;
     transform-origin: center; }
 
-@keyframes petalAnimation {
-  from {
-    transform: scale(0); }
-  to {
-    transform: scale(1); } }
-  .preLoader .hidden {
-    display: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: none; }
+.hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: none; }

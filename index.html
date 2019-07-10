@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Animations GSAP</title>
     <link rel="stylesheet" href="dist/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800" rel="stylesheet">
   </head>
   <body>
     <div class="preLoader">
@@ -125,7 +126,28 @@
         </svg>
       </div>
     </div>
-    <h1>Test</h1>
+
+    <header class="header">
+      <img class="header__logo" src="images/bee-logo.svg" alt="">
+      <nav class="nav">
+        <ul class="nav__menu">
+          <li><img class="nav__honeycomb" src="images/honeycomb.svg"></li>
+          <li><a class="nav__link" href="#">Home</a></li>
+          <li><a class="nav__link" href="#">About us</a></li>
+          <li><a class="nav__link" href="#">Our services</a></li>
+          <li><a class="nav__link" href="#">The blog</a></li>
+          <li><a class="nav__link" href="#">Contact us</a></li>
+          <li><img class="nav__honeycomb" src="images/honeycomb.svg"></li>
+        </ul>
+        <img class="nav__close" src="images/close.svg">
+      </nav>
+      <div class="header__menu-icon">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+      </div>
+    </header>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="./dist/animations.js"></script>
   </body>

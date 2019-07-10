@@ -1,0 +1,48 @@
+.nav {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: $COLOR_PRIMARY;
+
+  &__menu {
+    flex-flow: column wrap;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  &__link {
+    color: $COLOR_WHITE;
+    text-decoration: none;
+    font-size: 30px;
+    display: inline-block;
+    padding: 15px 30px;
+    transition: 0.2s ease all;
+  }
+
+  &__honeycomb {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__close {
+    margin: 0;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+
+    svg {
+      fill: $COLOR_WHITE;
+    }
+  }
+}

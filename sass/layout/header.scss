@@ -1,0 +1,27 @@
+.header {
+  position: relative;
+  height: 70px;
+
+  &__logo {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 26px;
+    left: 28px;
+  }
+
+  &__menu-icon {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 10;
+
+    .burger-line {
+      width: 24px;
+      height: 2px;
+      background-color: $COLOR_PRIMARY;
+      margin-bottom: 6px;
+    }
+  }
+}

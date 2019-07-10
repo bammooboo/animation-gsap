@@ -17,8 +17,8 @@
     opacity: 0;
     transform-origin: center;
   }
+}
 
-  .hidden {
-    @include hidden;
-  }
+.hidden {
+  @include hidden;
 }

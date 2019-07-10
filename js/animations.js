@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }, 3200);
 });
 
+// Pre-loader flower animation
+
 const tlPetals = new TimelineMax();
 
 TweenMax.to('.preLoader__inner', 6, {
@@ -43,9 +45,13 @@ tlPetals.to('.petalsCenter', 0.4, {
   opacity: 1
 });
 
+//Stop petal animation 
+
 function stopPetalsAnimation() {
   TweenMax.killTweensOf('.preLoader__inner');
 }
+
+// Hide pre-loader element completely when page is loaded
 
 function pageLoaded() {
   TweenMax.to('.preLoader__inner', 0.5, {
@@ -60,3 +66,48 @@ function pageLoaded() {
     document.querySelector('.preLoader').setAttribute('class', 'preLoader hidden');
   }, 1000);
 }
+
+//Hamburger menu animation on hover
+
+document.querySelector('.header__menu-icon').addEventListener("mouseover", function() {
+  TweenMax.to('.burger-line:first-child', 0.2, {
+    x: 4
+  });
+  TweenMax.to('.burger-line:last-child', 0.2, {
+    x: -4
+  });
+});
+
+document.querySelector('.header__menu-icon').addEventListener("mouseleave", function() {
+  TweenMax.to('.burger-line:first-child', 0.2, {
+    x: 0
+  });
+  TweenMax.to('.burger-line:last-child', 0.2, {
+    x:0
+  });
+});
+
+var tlMenu = new TimelineMax({paused: true});
+
+tlMenu.to('nav', 0.3, {
+  autoAlpha: 1
+})
+.staggerFromTo('nav li', 0.5, {
+  y: 100,
+  opacity: 0
+}, {
+  y: 0,
+  opacity: 1
+}, 0.1);
+
+//Open nav menu
+
+document.querySelector('.header__menu-icon').addEventListener("click", function() {
+  tlMenu.play(0);
+});
+
+//Close nav menu
+
+document.querySelector('.nav__close').addEventListener("click", function() {
+  tlMenu.reverse(0);
+});
