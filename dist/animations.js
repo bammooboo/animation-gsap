@@ -106,3 +106,36 @@ document.querySelector('.header__menu-icon').addEventListener("click", function 
 document.querySelector('.nav__close').addEventListener("click", function () {
   tlMenu.reverse(0);
 });
+
+//Hero section - bees animations
+
+var tlBeesLeft = new TimelineMax({ repeat: -1, ease: Linear.easeNone });
+var tlBeesRight = new TimelineMax({ repeat: -1, ease: Linear.easeNone, delay: 0.3 });
+
+TweenMax.fromTo('.beehive', 0.1, {
+  x: -0.3
+}, {
+  x: 0.3,
+  ease: RoughEase.ease,
+  repeat: -1
+});
+
+tlBeesLeft.fromTo('.leftBee', 0.7, {
+  y: -1
+}, {
+  y: 1
+}).fromTo('.leftBee', 0.7, {
+  y: 1
+}, {
+  y: -1
+});
+
+tlBeesRight.fromTo('.rightBee', 0.7, {
+  y: -1
+}, {
+  y: 1
+}).fromTo('.rightBee', 0.7, {
+  y: 1
+}, {
+  y: -1
+});

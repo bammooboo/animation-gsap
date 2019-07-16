@@ -350,6 +350,26 @@ html {
 body {
   font-family: 'Montserrat', sans-serif; }
 
+button {
+  appearance: none;
+  background-color: #1B1440;
+  color: #fff;
+  border: 1px solid #1B1440;
+  box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: 2px;
+  min-height: 44px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto; }
+
 .nav {
   position: fixed;
   height: 100vh;
@@ -378,7 +398,7 @@ body {
   .nav__close {
     margin: 0;
     position: absolute;
-    top: 24px;
+    top: 30px;
     right: 30px;
     cursor: pointer;
     width: 20px;
@@ -406,6 +426,29 @@ body {
       height: 2px;
       background-color: #1B1440;
       margin-bottom: 6px; }
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto; }
+  .hero__content {
+    margin: 50px; }
+  .hero__image {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto; }
+  .hero__title {
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #1B1440; }
+  .hero__text {
+    max-width: 570px;
+    line-height: 1.8;
+    color: #1B1440;
+    margin-bottom: 36px; }
 
 .preLoader {
   width: 100vw;
