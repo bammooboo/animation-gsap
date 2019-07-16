@@ -159,3 +159,23 @@ tlBeesRight.fromTo('.rightBee', 0.7, {
 }, {
   y: -1
 });
+
+//Logo bee drop animation
+
+document.querySelector('.button--bee-trigger').addEventListener("click", function () {
+  var tlBeeDrop = new TimelineMax();
+  var dropPoint = document.querySelector('.dropPoint').getClientRects();
+  var targetDrop = dropPoint[0].x - 40;
+
+  tlBeeDrop.to('.header__logo', 2, {
+    x: targetDrop
+  }).to('.header__logo', 3, {
+    y: 205,
+    rotation: 360,
+    ease: Bounce.easeOut
+  }).staggerTo('.beehive .beehivePiece', 2, {
+    y: 100
+  }, 0.1).to('.beeEyeRight, .beeEyeLeft', 1, {
+    y: 1
+  });
+});
