@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.setAttribute('class', 'loaded');
     stopPetalsAnimation();
     pageLoaded();
+    startTextAnimation();
   }, 3200);
 });
 
@@ -63,6 +64,23 @@ function pageLoaded() {
   }, 1000);
 }
 
+//Start text animation when page loaded
+
+function startTextAnimation() {
+  var tlText = new TimelineMax();
+
+  tlText.from('.hero__title', 1.5, {
+    y: -100,
+    opacity: 0
+  }).from('.hero__text', 0.8, {
+    y: -50,
+    opacity: 0
+  }).from('.button--bee-trigger', 0.8, {
+    y: -20,
+    opacity: 0
+  });
+}
+
 //Hamburger menu animation on hover
 
 document.querySelector('.header__menu-icon').addEventListener("mouseover", function () {
@@ -112,6 +130,7 @@ document.querySelector('.nav__close').addEventListener("click", function () {
 var tlBeesLeft = new TimelineMax({ repeat: -1, ease: Linear.easeNone });
 var tlBeesRight = new TimelineMax({ repeat: -1, ease: Linear.easeNone, delay: 0.3 });
 
+//shaking effect on beehive
 TweenMax.fromTo('.beehive', 0.1, {
   x: -0.3
 }, {
@@ -120,6 +139,7 @@ TweenMax.fromTo('.beehive', 0.1, {
   repeat: -1
 });
 
+// Bees hovering around beehive
 tlBeesLeft.fromTo('.leftBee', 0.7, {
   y: -1
 }, {

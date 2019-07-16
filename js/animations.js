@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.setAttribute('class', 'loaded');
     stopPetalsAnimation();
     pageLoaded();
+    startTextAnimation();
   }, 3200);
 });
 
@@ -65,6 +66,25 @@ function pageLoaded() {
     document.querySelector('.preLoader__inner').setAttribute('class', '.preLoader__inner hidden');
     document.querySelector('.preLoader').setAttribute('class', 'preLoader hidden');
   }, 1000);
+}
+
+//Start text animation when page loaded
+
+function startTextAnimation() {
+  const tlText = new TimelineMax();
+
+  tlText.from('.hero__title', 1.5, {
+    y: -100,
+    opacity: 0
+  })
+  .from('.hero__text', 0.8, {
+    y: -50,
+    opacity: 0
+  })
+  .from('.button--bee-trigger', 0.8, {
+    y: -20,
+    opacity: 0
+  })
 }
 
 //Hamburger menu animation on hover
