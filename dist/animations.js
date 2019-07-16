@@ -90,6 +90,10 @@ document.querySelector('.header__menu-icon').addEventListener("mouseover", funct
   TweenMax.to('.burger-line:last-child', 0.2, {
     x: -4
   });
+  TweenMax.to('.beeEyeLeft, .beeEyeRight', 1, {
+    x: 0.5,
+    y: -0.5
+  });
 });
 
 document.querySelector('.header__menu-icon').addEventListener("mouseleave", function () {
@@ -98,6 +102,10 @@ document.querySelector('.header__menu-icon').addEventListener("mouseleave", func
   });
   TweenMax.to('.burger-line:last-child', 0.2, {
     x: 0
+  });
+  TweenMax.to('.beeEyeLeft, .beeEyeRight', 1, {
+    x: 0,
+    y: 0
   });
 });
 
@@ -162,20 +170,46 @@ tlBeesRight.fromTo('.rightBee', 0.7, {
 
 //Logo bee drop animation
 
-document.querySelector('.button--bee-trigger').addEventListener("click", function () {
-  var tlBeeDrop = new TimelineMax();
-  var dropPoint = document.querySelector('.dropPoint').getClientRects();
-  var targetDrop = dropPoint[0].x - 40;
+var tlLogoBee = new TimelineMax({ repeat: -1, ease: Linear.easeNone, delay: 0, paused: true });
 
-  tlBeeDrop.to('.header__logo', 2, {
-    x: targetDrop
-  }).to('.header__logo', 3, {
-    y: 205,
-    rotation: 360,
-    ease: Bounce.easeOut
-  }).staggerTo('.beehive .beehivePiece', 2, {
-    y: 100
-  }, 0.1).to('.beeEyeRight, .beeEyeLeft', 1, {
-    y: 1
-  });
+tlLogoBee.fromTo('.header__logo', 0.5, {
+  y: -5
+}, {
+  y: 5
+}).fromTo('.header__logo', 0.5, {
+  y: 5
+}, {
+  y: -5
+});
+
+var tlBeeDrop = new TimelineMax({ paused: true });
+var dropPoint = document.querySelector('.dropPoint').getClientRects();
+var targetDrop = dropPoint[0].x - 40;
+
+tlBeeDrop.to('.header__logo', 3, {
+  x: targetDrop
+}).to('.header__logo', 3, {
+  y: 205,
+  rotation: 360,
+  ease: Bounce.easeOut
+}).staggerTo('.beehive .beehivePiece', 2, {
+  y: 100
+}, 0.1).to('.beeEyeRight, .beeEyeLeft', 1, {
+  y: 1
+});
+// .to('.header__logo, .beehive, .beehivePiece', 2, {
+//   clearProps: 'all'
+// })
+
+var beeTrigger = document.querySelector('.button--bee-trigger');
+
+beeTrigger.addEventListener("click", function () {
+  if (beeTrigger.classList.contains('active')) {
+    beeTrigger.classList.remove('active');
+    tlBeeDrop.reverse();
+  } else {
+    beeTrigger.classList.add('active');
+    tlLogoBee.play();
+    tlBeeDrop.play();
+  }
 });
