@@ -7,6 +7,7 @@
       stopPetalsAnimation();
       pageLoaded();
       startTextAnimation();
+      startPopUpAnimation();
     }, 3200);
     startBees();
   });
@@ -284,4 +285,15 @@
       tlBeeDrop.play();
     }
   });
+
+  //Bee pop up animation
+
+  function startPopUpAnimation() {
+    var tlBeePopup = new TimelineMax({ delay: 3 });
+
+    tlBeePopup.to('.full-image__bee', 0.4, {
+      ease: Back.easeOut.config(2.4),
+      y: -150
+    });
+  }
 })();

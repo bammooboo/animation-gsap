@@ -5,6 +5,7 @@
       stopPetalsAnimation();
       pageLoaded();
       startTextAnimation();
+      startPopUpAnimation();
     }, 3200);
     startBees();
   });
@@ -166,7 +167,7 @@
     .from('.button--bee-trigger', 0.8, {
       y: -20,
       opacity: 0
-    })
+    });
   }
 
   //Hamburger menu animation on hover
@@ -296,5 +297,16 @@
       tlBeeDrop.play();
     }
   });
+
+  //Bee pop up animation
+
+  function startPopUpAnimation() {
+    const tlBeePopup = new TimelineMax({delay: 3});
+
+    tlBeePopup.to('.full-image__bee', 0.4, {
+      ease: Back.easeOut.config(2.4),
+      y: -150
+    });
+  }
 
 })();

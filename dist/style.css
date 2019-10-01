@@ -414,6 +414,24 @@ body {
     .nav__close svg {
       fill: #fff; }
 
+.full-image {
+  height: 600px;
+  width: 100%;
+  position: relative; }
+  .full-image__bee {
+    margin: 0 auto;
+    width: 300px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+  .full-image__wall {
+    background-color: #1B1440;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    bottom: 0; }
+
 .header {
   position: relative;
   height: 70px; }
