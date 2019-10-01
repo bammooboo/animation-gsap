@@ -295,5 +295,15 @@
       ease: Back.easeOut.config(2.4),
       y: -150
     });
+
+    TweenMax.fromTo('#bee-wing', 0.1, {
+      rotation: 5,
+      transformOrigin: 'right bottom'
+    }, {
+      rotation: -5,
+      ease: RoughEase.ease,
+      repeat: -1,
+      transformOrigin: 'right bottom'
+    });
   }
 })();
