@@ -8,6 +8,7 @@
       pageLoaded();
       startTextAnimation();
     }, 3200);
+    startBees();
   });
 
   // Pre-loader flower animation
@@ -63,6 +64,86 @@
       document.querySelector('.preLoader__inner').setAttribute('class', '.preLoader__inner hidden');
       document.querySelector('.preLoader').setAttribute('class', 'preLoader hidden');
     }, 1000);
+  }
+
+  function startBees() {
+    particlesJS('beehive', {
+      particles: {
+        number: {
+          value: 200,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        shape: {
+          type: 'image',
+          image: {
+            src: 'images/bee.png',
+            width: 100,
+            height: 100
+          },
+          stroke: {
+            width: 0,
+            color: '#fff'
+          },
+          polygon: {
+            nb_sides: 5
+          }
+        },
+        size: {
+          value: 20,
+          random: true
+        },
+        line_linked: {
+          enable: false
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false,
+          attract: {
+            enable: true,
+            rotateX: 3000,
+            rotateY: 3000
+          }
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'bubble'
+            // mode: 'repulse'
+            // mode: 'grab'
+          },
+          onclick: {
+            enable: true,
+            mode: 'push'
+          },
+          resize: true
+        },
+        modes: {
+          push: {
+            particles_nb: 4
+          },
+          repulse: {
+            distance: 50
+          },
+          bubble: {
+            distance: 100,
+            size: 30,
+            opacity: 1,
+            duration: 10
+          }
+        }
+      }
+    });
   }
 
   //Start text animation when page loaded
