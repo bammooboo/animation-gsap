@@ -118,7 +118,9 @@
         events: {
           onhover: {
             enable: true,
-            mode: 'grab'
+            mode: 'bubble'
+            // mode: 'repulse'
+            // mode: 'grab'
           },
           onclick: {
             enable: true,
@@ -128,7 +130,16 @@
         },
         modes: {
           push: {
-            particles_nb: 12
+            particles_nb: 4
+          },
+          repulse: {
+            distance: 50
+          },
+          bubble: {
+            distance: 100,
+            size: 30,
+            opacity: 1,
+            duration: 10
           }
         }
       }
