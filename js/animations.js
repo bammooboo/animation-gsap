@@ -68,6 +68,8 @@
     setTimeout(function() {
       document.querySelector('.preLoader__inner').setAttribute('class', '.preLoader__inner hidden');
       document.querySelector('.preLoader').setAttribute('class', 'preLoader hidden');
+      flowerAnimation();
+      catAnimations();
     }, 1000);
   }
 
@@ -315,6 +317,63 @@
       rotation: -5,
       ease: RoughEase.ease,
       repeat: -1,
+      transformOrigin: 'right bottom',
+    });
+  }
+
+  function flowerAnimation() {
+    const tlFlower = new TimelineMax();
+
+    TweenMax.to('.burnt-flower__outer', 6, {
+      rotation: 360,
+      repeat: -1,
+      ease: Linear.easeNone
+    });
+  
+    tlFlower.to('.flower-center', 1, {
+      animation: 'petalAnimation 0.5s',
+      opacity: 1
+    })
+    .to('.flower-one', 1, {
+      animation: 'petalAnimation 1s',
+      opacity: 1,
+    })
+    .to('.flower-two', 1, {
+      animation: 'petalAnimation 1s',
+      opacity: 1
+    })
+    .to('.flower-three', 1, {
+      animation: 'petalAnimation 1s',
+      opacity: 1
+    })
+    .to('.flower-four', 1, {
+      animation: 'petalAnimation 1s',
+      opacity: 1
+    });
+  }
+
+  function catAnimations() {
+    TweenMax.fromTo('.cat-tail', 2, {
+      rotation: 5,
+      transformOrigin: 'left bottom',
+    }, {
+      rotation: -5,
+      delay: 0,
+      repeat: -1,
+      repeatDelay: 0.1,
+      yoyo: true,
+      immediateRender:false,
+      transformOrigin: 'left bottom',
+    });
+
+    const tlCat = new TimelineMax({repeat: 5, repeatDelay: 5});
+
+    tlCat.fromTo('.left-ear', 0.2, {
+      rotation: 4,
+      transformOrigin: 'right bottom',
+    }, {
+      rotation: -4,
+      ease: RoughEase.ease,
       transformOrigin: 'right bottom',
     });
   }

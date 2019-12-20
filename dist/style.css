@@ -414,6 +414,20 @@ body {
     .nav__close svg {
       fill: #fff; }
 
+.burnt-flower {
+  height: 500px;
+  margin: 0 auto;
+  width: 500px; }
+  .burnt-flower__outer {
+    transform-origin: center; }
+  .burnt-flower__inner {
+    transform-origin: center; }
+    .burnt-flower__inner .burnt-flower__layer {
+      opacity: 0;
+      transform-origin: center; }
+  .burnt-flower .base-petal {
+    fill: black; }
+
 .full-image {
   height: 600px;
   width: 100%;
